@@ -1,17 +1,28 @@
-function calcular() {
-  const num1 = parseFloat(document.getElementById("num1").value);
-  const num2 = parseFloat(document.getElementById("num2").value);
-  const operacao = document.getElementById("operacao").value;
-  let resultado;
+let displayValue = "0";
 
-  switch (operacao) {
-    case "+": resultado = num1 + num2; break;
-    case "-": resultado = num1 - num2; break;
-    case "*": resultado = num1 * num2; break;
-    case "/": resultado = num2 !== 0 ? num1 / num2 : "Erro: divisão por zero"; break;
-    case "%": resultado = num2 !== 0 ? num1 % num2 : "Erro: divisão por zero"; break;
-    default: resultado = "Operação inválida";
+function updateDisplay() {
+  document.getElementById("display").innerText = displayValue;
+}
+
+function press(value) {
+  if (displayValue === "0") {
+    displayValue = value;
+  } else {
+    displayValue += value;
   }
+  updateDisplay();
+}
 
-  document.getElementById("resultado").innerText = "Resultado: " + resultado;
+function clearDisplay() {
+  displayValue = "0";
+  updateDisplay();
+}
+
+function calculate() {
+  try {
+    displayValue = eval(displayValue).toString();
+  } catch {
+    displayValue = "Erro";
+  }
+  updateDisplay();
 }
