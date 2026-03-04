@@ -2,21 +2,21 @@ import * as readline from "readline";
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
-function perguntar() {
-  rl.question("Insira o primeiro número (ou 'sair'): ", (num1) => {
+function perguntar(): void {
+  rl.question("Insira o primeiro número (ou 'sair'): ", (num1: string) => {
     if (num1.toLowerCase() === "sair") {
       console.log("Saindo...");
       rl.close();
       return;
     }
 
-    rl.question("Insira o segundo número: ", (num2) => {
-      rl.question("Digite a operação (+, -, *, /, %): ", (op) => {
-        const a = Number(num1);
-        const b = Number(num2);
+    rl.question("Insira o segundo número: ", (num2: string) => {
+      rl.question("Digite a operação (+, -, *, /, %): ", (op: string) => {
+        const a: number = Number(num1);
+        const b: number = Number(num2);
         let result: number | null = null;
 
         if (op === "+") result = a + b;
