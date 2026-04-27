@@ -42,24 +42,6 @@ Uma calculadora simples e funcional desenvolvida com **React Native**, capaz de 
 - [Node.js](https://nodejs.org/)
 - [Expo CLI](https://expo.dev/) ou ambiente React Native configurado
 
-### Passos
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
-# Acesse a pasta do projeto
-cd calculadora
-
-# Instale as dependências
-npm install
-
-# Inicie o projeto
-npx expo start
-# ou
-npx react-native run-android
-```
-
 ---
 
 ## 🧠 Como funciona
